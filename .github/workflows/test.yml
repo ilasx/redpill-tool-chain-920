@@ -70,6 +70,9 @@ jobs:
 
           # 调整synoinfo
           sed -i -e 's/"synoinfo": {},/"synoinfo": {\n\t"maxlanport": "2"\n    },/' ${{matrix.platform}}_user_config.json
+          
+          # 增加末尾空行 
+          sed -i '$a\n' ${{matrix.platform}}_user_config.json
 
           cat ${{matrix.platform}}_user_config.json
 
