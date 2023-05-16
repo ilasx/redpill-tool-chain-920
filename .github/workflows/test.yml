@@ -87,10 +87,10 @@ jobs:
         run: |
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-misc.json
 
-      - name: 添加 jumkey.dtb !!!Create your own device tree binary!!!
-        if: matrix.platform == 'ds920p' || matrix.platform == 'ds1621p' || matrix.platform == 'ds2422p'
+      - name: 添加自定义 920.dtb
+        if: matrix.platform == 'ds920p'
         run: |
-          ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-dtb.json
+          ./redpill_tool_chain.sh add https://github.com/ilasx/redpill-tool-chain-920/raw/master/extensions/redpill-staticdtb.json
           echo '!!!Create your own device tree binary!!!'
           echo 'see https://github.com/jumkey/redpill-load/blob/develop/redpill-dtb/README.md'
 
