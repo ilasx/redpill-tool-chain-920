@@ -70,5 +70,6 @@ COPY Makefile /opt/
 COPY entrypoint.sh /entrypoint.sh
 COPY helper.sh ./
 RUN chmod +x /entrypoint.sh  && chmod +x ./helper.sh
+RUN sed -i 's/fe2a4648f76adeb65c3230632503ea36bbac64ee88b459eb9bfb5f3b8c8cebb3/b9b77846e0983f50496276bec6bcdfcfadd4c1f9f0db8ed2ca5766f131ddf97f/' /opt/redpill-load/config/DS920+/7.0.1-42218/config.json
 
 ENTRYPOINT [ "/entrypoint.sh" ]
